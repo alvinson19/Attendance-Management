@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Attendance Management System</h1>
+        <p>Made by Alvin, ft. ChatGPT</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="date-time">
+                <span id="datetime"></span>
+            </div>
+            <div class="attendance-container">
+                <div class="attendance-header">
+                    <span>Subject: <input type="text" id="subject"></span>
+                </div>
+                <ul id="studentList" class="student-list">
+                    <!-- Student list will be generated here -->
+                </ul>
+                <button onclick="generateReport()">Generate Report</button>
+            </div>
+            <div id="reportContainer" class="report-container">
+                <textarea id="reportText" rows="10" readonly></textarea>
+                <button onclick="copyReport()">Copy Report</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

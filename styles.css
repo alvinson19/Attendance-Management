@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555; /* Adjust text color */
+}
+
+.date-time {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.date-time span {
+    font-size: 14px;
+    color: #555; /* Adjust text color */
+}
+
+main {
+    padding: 20px;
+}
+
+.attendance-container {
+    margin-bottom: 20px;
+}
+
+.attendance-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.attendance-header span {
+    display: inline-block;
+}
+
+.student-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student-item {
+    margin-bottom: 5px;
+}
+
+.report-container {
+    display: none;
+    margin-top: 20px;
+}
+
+#reportText {
+    width: 100%;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
