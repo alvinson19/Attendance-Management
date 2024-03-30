@@ -88,7 +88,7 @@ function generateReport() {
     uncheckedStudents.forEach(function(student) {
         var usn = students[parseInt(student.getAttribute("data-rollno")) - 1].usn;
         var name = students[parseInt(student.getAttribute("data-rollno")) - 1].name;
-        report += usn + "\t\t\t" + name + "\n";
+        report += usn + "\t\t - " + name + "\n";
     });
     var reportText = document.getElementById("reportText");
     reportText.value = report;
