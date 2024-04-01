@@ -94,7 +94,7 @@ function generateReport() {
     var subject = document.getElementById("subject").value;
     var date = new Date().toLocaleDateString();
     var uncheckedStudents = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
-    var report = "📍 Absentees List for " + subject + " on " + date + ":\n\n";
+    var report = "📍 Absentees List for " + subject + " class on " + date + ":\n\n";
     report += "USN No\t\tName\n";
     uncheckedStudents.forEach(function(student) {
         var usn = students[parseInt(student.getAttribute("data-rollno")) - 1].usn;
