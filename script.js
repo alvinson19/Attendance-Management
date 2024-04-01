@@ -110,7 +110,7 @@ function createStudentList() {
         var usn = student.usn;
         var name = student.name;
         listItem.innerHTML = `
-            <input type="checkbox" data-rollno="${index + 1}">
+            <input type="checkbox" data-rollno="${index + 1}" checked> <!-- Set checked attribute -->
             <label for="rollno${index + 1}">${usn} - ${name}</label>
         `;
         studentList.appendChild(listItem);
