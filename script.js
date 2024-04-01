@@ -65,6 +65,17 @@ var students = [
     { usn: "1MJ23CS063", name: "H D ANANYA" }
 ];
 
+function unlock() {
+    var passcode = document.getElementById("passcodeInput").value;
+    if (passcode === "1528") { // Replace "1234" with your desired 4-digit code
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("attendanceSystem").style.display = "block";
+        document.getElementById("errorMessage").style.display = "none"; // Hide error message if it was displayed previously
+    } else {
+        document.getElementById("errorMessage").style.display = "block"; // Display error message
+    }
+}
+
 function updateTime() {
     var now = new Date();
     var datetimeElement = document.getElementById("datetime");
@@ -83,7 +94,7 @@ function generateReport() {
     var subject = document.getElementById("subject").value;
     var date = new Date().toLocaleDateString();
     var uncheckedStudents = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
-    var report = "Absentees List for " + subject + " on " + date + ":\n\n";
+    var report = "📍 Absentees List for " + subject + " on " + date + ":\n\n";
     report += "USN No\t\tName\n";
     uncheckedStudents.forEach(function(student) {
         var usn = students[parseInt(student.getAttribute("data-rollno")) - 1].usn;
@@ -91,7 +102,7 @@ function generateReport() {
         report += usn + "\t - " + name + "\n";
     });
     var reportText = document.getElementById("reportText");
-    reportText.value = report;
+    reportText.innerHTML = report; // Use innerHTML to render HTML content
     document.getElementById("reportContainer").style.display = "block";
 }
 
@@ -100,6 +111,44 @@ function copyReport() {
     reportText.select();
     document.execCommand("copy");
     alert("Report copied to clipboard!");
+}
+
+function saveReportAsImage() {
+    var reportText = document.getElementById("reportText").value;
+
+    // Split the report text into lines
+    var lines = reportText.split('\n');
+
+    // Calculate the required dimensions based on the content
+    var lineHeight = 20; // Adjust as needed
+    var width = 400; // Adjust as needed
+    var height = lines.length * lineHeight;
+
+    // Create a new canvas element
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // Set canvas dimensions
+    canvas.width = width;
+    canvas.height = height;
+
+    // Draw the report content onto the canvas
+    ctx.fillStyle = '#fff'; // Set background color
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas with background color
+    ctx.font = '14px Arial'; // Set font size and style
+    ctx.fillStyle = '#000'; // Set text color
+    for (var i = 0; i < lines.length; i++) {
+        ctx.fillText(lines[i], 10, (i + 1) * lineHeight);
+    }
+
+    // Convert canvas content to data URL
+    var dataURL = canvas.toDataURL();
+
+    // Create a link element and trigger download
+    var link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'attendance_report.png';
+    link.click();
 }
 
 function createStudentList() {
