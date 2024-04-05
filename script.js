@@ -22,7 +22,7 @@ var students = [
     { usn: "1MJ23CS020", name: "ARFA KUSUM" },
     { usn: "1MJ23CS021", name: "ARJUN SHARMA" },
     { usn: "1MJ23CS022", name: "ARUN ESHWAROOP" },
-    { usn: "1MJ23CS023", name: "ASSEMA SULTHANA" },
+    { usn: "1MJ23CS023", name: "ASEEMA SULTHANA" },
     { usn: "1MJ23CS024", name: "AVIRAJ BHAWRHA" },
     { usn: "1MJ23CS025", name: "AYUSH KUMAR" },
     { usn: "1MJ23CS026", name: "BALAJI R" },
